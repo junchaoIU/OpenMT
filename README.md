@@ -1,12 +1,12 @@
-## OpenMT: A Simple and Open Source Machine Translation Experiment Gallery
+# OpenMT : A Simple and Open Source Machine Translation Experiment Gallery
 
-### Installation
+## Installation
 All dependencies can be installed via:
 ```
 pip3 install -r requirements.txt
 ```
 
-### Basic Environments
+## Basic Environments
 ```shell
 mkdir "Envs"
 cd "Envs"
@@ -23,7 +23,7 @@ git clone https://github.com/moses-smt/mosesdecoder.git
 ```
 
 
-### MT-Scripts
+## MT-Scripts
 **Dictionary Generate:** Generate new dictionary for prepared bi-text
 ```shell
 python3 Scripts/generate_dict.py dicts_path
@@ -74,7 +74,7 @@ python3 ${SPM} ${MODEL} < ${DATA}/${TEST}.${SRC} > ${DATA}/${TEST}.spm.${SRC}
 python3 ${SPM} ${MODEL} < ${DATA}/${TEST}.${TGT} > ${DATA}/${TEST}.spm.${TGT} 
 ```
 
-### MT-Evaluation
+## MT-Evaluation
 To run the Python scripts and calculate the MT evaluation metrics on your machine translation output, you need to have two files:
 
 - ref.txt : It is the human translation (target) file of your test dataset.
@@ -88,6 +88,26 @@ python3 MT-Evaluation/BLEU/compute-bleu.py ref.txt hyp.txt
 **Sentence BLEU:** Calculates the BLEU score for sentence by sentence and saves the result to a file.
 ```
 python3 MT-Evaluation/BLEU/compute-bleu-sentence.py ref.txt hyp.txt
+```
+
+**Corpus TER:** Calculates the TER score for the whole corpus and prints the result.
+```
+python3 MT-Evaluation/TER/compute-ter.py ref.txt hyp.txt
+```
+
+**Sentence TER:** Calculates the TER score for sentence by sentence and saves the result to a file.
+```
+python3 MT-Evaluation/TER/compute-ter-sentence.py ref.txt hyp.txt
+```
+
+**Corpus CHRF:** Calculates the CHRF score for the whole corpus and prints the result.
+```
+python3 MT-Evaluation/CHRF/compute-chrf.py ref.txt hyp.txt
+```
+
+**Sentence CHRF:** Calculates the CHRF score for sentence by sentence and saves the result to a file.
+```
+python3 MT-Evaluation/CHRF/compute-chrf-sentence.py ref.txt hyp.txt
 ```
 
 **Sentence METEOR:** Note that METEOR works on the sentence level only.
