@@ -4,7 +4,6 @@ import json
 import sys
 import random
 
-import chardet
 from tqdm import tqdm
 
 ## AA_lang need 大写，如：EN
