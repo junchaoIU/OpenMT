@@ -11,10 +11,10 @@ TGT_file = sys.argv[4]
 src_data = []
 tgt_data = []
 
-with open(SCR_file) as fp:
+with open(SCR_file, encoding="utf-8") as fp:
     src_data=fp.readlines()
 
-with open(TGT_file) as fp:
+with open(TGT_file, encoding="utf-8") as fp:
     tgt_data=fp.readlines()
 
 # en_data = en_data[:500000]
@@ -37,5 +37,5 @@ file_mapping = {
 
 }
 for k, v in file_mapping.items():
-    with open(f'{k}', 'w') as fp:
+    with open(f'{k}', 'w', encoding="utf-8") as fp:
         fp.writelines(v)
