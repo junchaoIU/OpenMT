@@ -39,3 +39,4 @@ file_mapping = {
 for k, v in file_mapping.items():
     with open(f'{k}', 'w', encoding="utf-8") as fp:
         fp.writelines(v)
+

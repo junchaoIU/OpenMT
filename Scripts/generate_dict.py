@@ -181,7 +181,9 @@ if __name__ == "__main__":
                 try:
                     src_word, tgt_word = line.strip().split(" ")
                 except:
+                    # print(line)
                     src_word, tgt_word = line.strip().split("\t")
+
                 # src
                 src_final_word = src.upper() + "__" + src_word
                 if src_final_word not in str2id:
@@ -198,6 +200,7 @@ if __name__ == "__main__":
 
                 # myset.union(src_final_word, tgt_final_word)
                 g.add_edge(_src_id, _tgt_id)
+
     id2str = dict([(v, k) for k, v in str2id.items()])
 
     # pool = Pool(10)
@@ -210,6 +213,7 @@ if __name__ == "__main__":
     #         #     sys.stdout.write("\t".join(_ls)+"\n")
     #         # for _ls in list(tqdm(pool.imap(get_adjacent_words, g.vert_dict.values()))):
     #         fw.write("\t".join(_ls) + "\n")
+
     new_dict = {}
     for v in tqdm(g.vert_dict.values()):
         # for _id in tqdm(range(1000)):
@@ -222,9 +226,7 @@ if __name__ == "__main__":
         else:
             print(_ls)
 
-
-    with open("../dict.json", "w", encoding="utf-8") as f:
+    with open("dict.json", "w", encoding="utf-8") as f:
         json.dump(new_dict, f, indent=4, ensure_ascii=False)
     print("加载入文件完成...")
-
     print("finished")
