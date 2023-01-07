@@ -1,10 +1,9 @@
 ## DATA RESOURCES
-- Search Engine: https://opus.nlpl.eu/
+### Search Engine: https://opus.nlpl.eu/
 
-- WMT22
-  - https://www.statmt.org/wmt22/translation-task.html
-
-en-ro
-- https://object.pouta.csc.fi/OPUS-TED2020/v1/mono/ro.txt.gz
-- https://object.pouta.csc.fi/OPUS-TED2020/v1/mono/en.txt.gz
-- https://www.statmt.org/europarl/v7/ro-en.tgz
+### [WMT16](https://www.statmt.org/wmt22/translation-task.html)
+  - en-ro
+    ```shell
+      wget http://www.statmt.org/europarl/v7/ro-en.tgz
+      wget http://opus.lingfil.uu.se/download.php?f=SETIMES2/en-ro.txt.zip -O SETIMES2.en-ro.txt.zip
+    ```
