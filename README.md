@@ -1,4 +1,4 @@
-# OpenMT : A Simple and Open Source Machine Translation Experiment Gallery
+# OpenMT : A Simple and Open Source Machine Translation Experiment Auxiliary Tools
 
 ## Installation
 All dependencies can be installed via:
